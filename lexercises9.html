@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+    <button class="js-9a-button">9a</button>
+    <button class="js-9b-button">9b</button>
+
+    <button onclick="
+      firstFuncion();
+    ">heads</button>
+
+    <button onclick="
+      secondFunction();
+    ">tails</button>
+
+    <p class="js-result"></p>
+
+
+
+    <input placeholder= "Daniel" class="js-name-input" onkeydown="
+    handleKeyDown(event);
+    ">
+
+    <button onclick="
+    thirdFunction();
+    ">Submit</button>
+
+    <p class="js-name"></p>
+
+
+
+    <input placeholder="Type something" class= "on-page" onkeyup="
+      const inputElem = document.querySelector('.on-page');
+      document.querySelector('.text')
+        .innerHTML = inputElem.value;
+    ">
+
+    <p class="text"></p>
+
+
+
+
+    <script>
+      console.log(document.querySelector('.js-9a-button'));
+      document.querySelector('.js-9b-button').innerHTML = '9b done';
+
+      function firstFuncion() {
+        document.querySelector('.js-result')
+        .innerHTML = 'You chose: heads';
+      }
+
+      function secondFunction() {
+        document.querySelector('.js-result')
+        .innerHTML = 'You chose: tails';
+      }
+
+      function thirdFunction() {
+        const inputElement = document.querySelector('.js-name-input');
+        document.querySelector('.js-name')
+        .innerHTML = `Your name is: ${inputElement.value}`;
+      }
+
+      function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+          thirdFunction();
+        }
+      }
+
+    </script>
+  </body>
+</html>

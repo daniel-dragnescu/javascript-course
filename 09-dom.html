@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+    </head>
+    <body>
+      <button>hello</button>
+      <button class="js-button">Second button</button>
+
+      <script>
+       
+       //innerHTML controls all the html inside the body element. Will give us all the html inside body
+       // when you type inner.HTML, you put something inside an element
+
+       
+       /*
+       document.body.innerHTML = 'hello';
+       document.title = 'Good job!';
+       
+
+       console.log(document.title);
+       document.title = 'Changed';
+
+       console.log(document.body); - take the body element and put it in JS
+       console.log(typeof document.body);
+
+       console.log(document.body.innerHTML);
+       document.body.innerHTML = '<button>Good job!</button>';
+       */
+
+
+       console.log(document.querySelector('button').innerHTML); //give us the html inside buton (.innerHTML)
+       document.querySelector('button')
+        .innerHTML = 'Changed';
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement);
+
+
+        //Using the DOM you can get HTML elements from the page, put it inside the JS and save it in a variable.
+        //Ex: js-button
+      </script>
+  </body>
+</html>
+ 

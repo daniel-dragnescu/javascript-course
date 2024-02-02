@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    </head>
+    <body>
+      
+
+      <script>
+
+        const myArray = [10, 20, 30];
+        console.log(myArray);
+
+        console.log(myArray[0]); //0 number <-index = position in the array that we want to get. This get the 10 number. 
+
+        myArray[0] = 99;
+        console.log(myArray);
+
+        [1, 'hello' , true, { name: 'socks' }, [1, 2]]
+        console.log(typeof [1, 2]);
+        console.log(Array.isArray([1, 2]));
+
+        console.log(myArray.length); //how many values are in the array
+
+        myArray.push(100); //add a value to the array
+        console.log(myArray);
+
+        myArray.splice(0, 1); //remove a value from array
+        console.log(myArray);
+
+
+        //loops
+
+        let i = 1;
+
+        while (i <= 5) {
+          console.log(i);
+          i++; //shortcut for i = i + 1 or i += 1;
+          //if the condition (1 <= 5) is true, the computer will keep running the code again till will be false.
+          //everytime will loop the code, will increase +1 till will be false.
+        }
+
+        for (let i = 1; i <= 5; i++) {
+          console.log(i); //display variable i in console. here we write the cod that we want to loop over and over.
+        }
+
+        let randomNumber = 0;
+
+        while (randomNumber < 0.5) {
+          randomNumber = Math.random();
+        }
+
+        console.log(randomNumber);  //generate a random number which is at least 0.5
+        // if the number is less than 0.5, we keep generate a number
+        //this is a non standard loop and is good to use this type of loop. is more flexible
+
+
+        const todoList = [
+          'make dinner',
+          'wash dishes',
+          'watch youtube'
+        ];
+
+        for (let i = 0; i < todoList.length; i++) {
+          const value = todoList[i] // take whatever the index variable is and acces that index in the array. if i = 0, will take first value
+          console.log(value); //will loop through the each index of array, get the value and display
+        }
+        //first = loop variable, second = loop condition. we looping as long as index is less than to the last index, third = increment step.
+        //the last i = nr of values from array minus 1 (array.length -1)
+
+        
+        const nums = [1, 1, 3];    //acumulate pattern
+        let total = 0;  // acumulate variable
+
+        for (let i = 0; i < nums.length; i++) { // <-this loop will go through each index of this array [1, 1, 3]
+          const num = nums[i]; // <-first we use the index to get the value (let i  = 0)
+          total += num; //add each nr to the total
+        }
+ 
+        console.log(total);
+        
+
+
+        
+        const numsDoubled = []; //acumulate variable
+
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          numsDoubled.push(num * 2);
+        }
+
+        console.log(numsDoubled);
+        
+
+
+        //the array is reference as object. The data is saved somewhere in the computer's memory.
+        const array1 = [1, 2, 3];
+        const array2 = array1.slice(); //this is a copy of a reference, not a value. they are pointing to the same way
+        array2.push(4); //even though we added 4 to array2, the both are modified because they are references.
+        console.log(array1);
+        console.log(array2);
+
+        //.slice helps us to make them to point to different values, to not be the same.
+
+        const [firstValue, secondValue] = [1, 2, 3]; //destructuring. to get out a value from an array
+
+
+        for (let i = 1; i <= 10; i++) {
+          if (i % 3 === 0) {
+            continue; // this will skip 3 and 6 because they are divisible by 3.
+          }
+          if (i === 3) {
+            continue; // this will skip a value, 3 in this case
+          }
+          console.log (i);
+          if (i === 8) {
+            break;  //break will stop the loop to 8, early
+          }
+        } 
+
+
+        let index = 1;
+
+        while (index <= 10) {
+          if (index % 3 === 0) {
+            index++;
+            continue; //in while loop, continue will skip the increment step => infinite loop. you have to do incr step manually
+          }
+          console.log(index); // this will skip the numbers divisible by 3 - 3, 6, 9. 
+          index++
+        }
+
+        function doubleArray(nums) {
+          const numsDoubled = []; //acumulate variable
+
+          for (let i = 0; i < nums.length; i++) {
+            const num = nums[i];
+            if (num === 0) {
+              return numsDoubled; //if we see the nr 0, stop this loop early
+              //break;
+            }
+            numsDoubled.push(num * 2);
+          }
+
+          return numsDoubled;
+          //console.log(numsDoubled);
+      }
+      console.log(doubleArray([1, 1, 3]));
+      console.log(doubleArray([2, 2, 5, 0, 5]));
+
+
+
+      </script>
+  </body>
+</html>
+ 
